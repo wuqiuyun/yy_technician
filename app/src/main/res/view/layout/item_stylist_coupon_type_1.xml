@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <LinearLayout
+        android:id="@+id/ll_coupons"
+        android:layout_width="@dimen/dp_180"
+        android:layout_height="@dimen/dp_80"
+        android:background="@drawable/home_coupons"
+        android:orientation="horizontal">
+
+        <!--左边部分-->
+        <LinearLayout
+            android:layout_width="@dimen/dp_0"
+            android:layout_height="match_parent"
+            android:layout_weight="2"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/dp_5"
+                    android:text="￥"
+                    android:textColor="@color/color_FFA200"
+                    android:textSize="@dimen/sp_12" />
+
+                <TextView
+                    android:id="@+id/tv_amount"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="100"
+                    android:maxLines="1"
+                    android:autoSizeTextType="uniform"
+                    android:textColor="@color/color_FFA200"
+                    android:textSize="@dimen/sp_25" />
+
+
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/tv_limited"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="@string/full_reduction_hint"
+                android:textColor="@color/text_color"
+                android:textSize="@dimen/sp_14" />
+
+        </LinearLayout>
+
+        <!--右边部分-->
+        <LinearLayout
+            android:layout_width="@dimen/dp_0"
+            android:layout_height="match_parent"
+            android:layout_weight="3"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:paddingEnd="@dimen/dp_10"
+            android:paddingStart="@dimen/dp_10">
+
+            <TextView
+                android:id="@+id/tv_deduction"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="@string/item_deduction"
+                android:textColor="@color/color_FFA200"
+                android:textSize="@dimen/sp_14" />
+
+            <ProgressBar
+                android:id="@+id/pb_deduction"
+                style="@style/Base.Widget.AppCompat.ProgressBar.Horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dp_5"
+                android:layout_marginStart="@dimen/dp_5"
+                android:layout_marginEnd="@dimen/dp_5"
+                android:max="100"
+                android:progress="20"
+                android:progressDrawable="@drawable/layer_list_progress_drawable" />
+            
+            <TextView
+                android:id="@+id/tv_get"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/item_get"
+                android:textSize="@dimen/sp_14"
+                android:textColor="@color/white"
+                android:layout_marginTop="@dimen/dp_10"
+                android:paddingStart="@dimen/dp_5"
+                android:paddingEnd="@dimen/dp_5"
+                android:background="@drawable/shape_home_coupon_1"/>
+
+        </LinearLayout>
+    </LinearLayout>
+
+</layout>

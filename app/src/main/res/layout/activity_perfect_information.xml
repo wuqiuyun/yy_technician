@@ -1,0 +1,337 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <import type="com.yl.technician.component.databind.ClickHandler"/>
+
+        <variable
+            name="click"
+            type="ClickHandler"/>
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/alpha_95_white"
+        android:orientation="vertical">
+
+        <com.yl.technician.widget.TitleView
+            android:id="@+id/title_view"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_above="@id/ll"
+            app:isHome="true"
+            app:title_text="@string/perfect_information"/>
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp_0"
+            android:layout_weight="1">
+
+            <LinearLayout
+                android:id="@+id/ll"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/dp_20"
+                android:layout_marginRight="@dimen/dp_20"
+                android:layout_marginTop="@dimen/dp_20"
+                android:paddingBottom="@dimen/dp_20"
+                android:orientation="vertical">
+
+                <!--上传头像-->
+                <RelativeLayout
+
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:text="@string/up_head_photo"
+                        android:textColor="@color/alpha_95_black"
+                        android:textSize="@dimen/sp_20"/>
+
+                    <com.yl.core.widget.CircleImageView
+                        android:id="@+id/iv_head_photo"
+                        android:layout_width="@dimen/dp_88"
+                        android:layout_height="@dimen/dp_88"
+                        android:layout_alignParentRight="true"
+                        android:layout_marginRight="@dimen/dp_30"
+                        android:onClick="@{click.onClick}"
+                        android:src="@drawable/add_head_photo"/>
+
+                </RelativeLayout>
+
+                <!--用户姓名-->
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentBottom="true"
+                    android:layout_alignParentStart="true"
+                    android:layout_marginTop="@dimen/dp_30"
+                    android:background="@drawable/edittext_bg_grey"
+                    android:focusable="true"
+                    android:focusableInTouchMode="true">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentLeft="true"
+                        android:layout_centerInParent="true"
+                        android:layout_marginLeft="@dimen/dp_6"
+                        android:text="用户姓名"
+                        android:textColor="@color/alpha_95_black"
+                        android:textSize="@dimen/sp_14"/>
+
+                    <EditText
+                        android:id="@+id/et_user_name"
+                        style="@style/EditTextDefultStyle"
+                        android:layout_height="50dp"
+                        android:hint="请输入用户姓名"
+                        android:maxLines="1"
+                        android:paddingLeft="@dimen/dp_10"
+                        android:paddingRight="@dimen/dp_10"
+                        android:singleLine="true"
+                        android:maxLength="15"/>
+                </TableRow>
+
+
+                <!--用户性别-->
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:layout_marginTop="@dimen/dp_10"
+                    android:background="@drawable/edittext_bg_grey">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentLeft="true"
+                        android:layout_centerInParent="true"
+                        android:layout_marginLeft="@dimen/dp_6"
+                        android:text="@string/user_gender"
+                        android:textColor="@color/alpha_95_black"
+                        android:textSize="@dimen/sp_14"/>
+
+                    <RadioGroup
+                        android:id="@+id/rg_gender"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginRight="@dimen/dp_15"
+                        android:orientation="horizontal">
+
+                        <RadioButton
+                            android:id="@+id/rb_man"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginRight="@dimen/dp_10"
+                            android:background="@null"
+                            android:button="@null"
+                            android:checked="true"
+                            android:drawableLeft="@drawable/gender_man_selector"
+                            android:drawablePadding="@dimen/dp_5"
+                            android:text="@string/man"
+                            android:textColor="@color/alpha_95_black"
+                            android:textSize="@dimen/sp_14"/>
+
+                        <RadioButton
+                            android:id="@+id/rb_woman"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:background="@null"
+                            android:button="@null"
+                            android:drawableLeft="@drawable/gender_woman_selector"
+                            android:drawablePadding="@dimen/dp_5"
+                            android:text="@string/woman"
+                            android:textColor="@color/alpha_95_black"
+                            android:textSize="@dimen/sp_14"/>
+
+                    </RadioGroup>
+
+                </RelativeLayout>
+
+                <!--登录密码-->
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/dp_10"
+                    android:background="@drawable/edittext_bg_grey"
+                    android:focusable="true"
+                    android:focusableInTouchMode="true">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentLeft="true"
+                        android:layout_centerInParent="true"
+                        android:layout_marginLeft="@dimen/dp_6"
+                        android:text="@string/login_password2"
+                        android:textColor="@color/alpha_95_black"
+                        android:textSize="@dimen/sp_14"/>
+
+                    <EditText
+                        android:id="@+id/et_login_password"
+                        style="@style/EditTextDefultStyle"
+                        android:layout_height="50dp"
+                        android:hint="@string/hint_login_password2"
+                        android:inputType="textPassword"
+                        android:maxLines="1"
+                        android:paddingLeft="@dimen/dp_10"
+                        android:paddingRight="@dimen/dp_10"
+                        android:singleLine="true"
+                        android:maxLength="20"/>
+                </TableRow>
+
+                <!--确认密码-->
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/dp_10"
+                    android:background="@drawable/edittext_bg_grey"
+                    android:focusable="true"
+                    android:focusableInTouchMode="true">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/dp_6"
+                        android:text="@string/confirm_password"
+                        android:textColor="@color/alpha_95_black"
+                        android:textSize="@dimen/sp_14"/>
+
+                    <EditText
+                        android:id="@+id/et_confirm_password"
+                        style="@style/EditTextDefultStyle"
+                        android:layout_height="50dp"
+                        android:hint="@string/hint_confirm_password"
+                        android:inputType="textPassword"
+                        android:maxLines="1"
+                        android:paddingLeft="@dimen/dp_10"
+                        android:paddingRight="@dimen/dp_10"
+                        android:singleLine="true"
+                        android:text=""
+                        android:maxLength="20"/>
+
+                </TableRow>
+
+                <!--个人介绍-->
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/dp_10"
+                    android:background="@drawable/edittext_bg_grey"
+                    android:focusable="true"
+                    android:focusableInTouchMode="true">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/dp_6"
+                        android:text="@string/personal_introduction"
+                        android:textColor="@color/alpha_95_black"
+                        android:textSize="@dimen/sp_14"/>
+
+                    <EditText
+                        android:id="@+id/et_personal_introduction"
+                        style="@style/EditTextDefultStyle"
+                        android:layout_height="50dp"
+                        android:hint="@string/personal_introduction_hint"
+                        android:maxLines="1"
+                        android:paddingLeft="@dimen/dp_10"
+                        android:paddingRight="@dimen/dp_10"
+                        android:singleLine="true"
+                        android:text=""
+                        android:maxLength="25"/>
+
+                </TableRow>
+
+                <!--个人头衔-->
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:layout_marginTop="@dimen/dp_10"
+                    android:background="@drawable/edittext_bg_grey"
+                    android:gravity="center_vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginLeft="@dimen/dp_6"
+                        android:text="@string/individual_title"
+                        android:textColor="@color/alpha_95_black"
+                        android:textSize="@dimen/sp_14"/>
+
+                    <View
+                        android:layout_width="@dimen/dp_0"
+                        android:layout_height="@dimen/dp_0"
+                        android:layout_weight="1"/>
+
+                    <TextView
+                        android:id="@+id/tv_position"
+                        android:onClick="@{click.onClick}"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/shape_bg_white"
+                        android:drawablePadding="@dimen/dp_5"
+                        android:drawableRight="@drawable/icon_down"
+                        android:padding="@dimen/dp_5"
+                        android:text="高级美发师"
+                        android:layout_marginRight="@dimen/dp_10"
+                        android:textColor="@color/color_343434"
+                        android:textSize="@dimen/sp_14"/>
+                </TableRow>
+
+                <!--生日-->
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:layout_marginTop="@dimen/dp_10"
+                    android:background="@drawable/edittext_bg_grey">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_marginLeft="@dimen/dp_6"
+                        android:text="@string/birthday"
+                        android:textColor="@color/alpha_95_black"
+                        android:textSize="@dimen/sp_14"/>
+
+                    <TextView
+                        android:id="@+id/tv_birthday"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:layout_gravity="right"
+                        android:layout_marginRight="@dimen/dp_10"
+                        android:drawablePadding="@dimen/dp_3"
+                        android:drawableRight="@drawable/right"
+                        android:onClick="@{click.onClick}"
+                        android:text="2018/01/01"
+                        android:textSize="@dimen/sp_14"/>
+
+                </RelativeLayout>
+
+            </LinearLayout>
+        </ScrollView>
+
+        <Button
+            android:id="@+id/btn_ok"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/login_text_bg"
+            android:onClick="@{click.onClick}"
+            android:text="@string/ok"
+            android:textColor="@color/alpha_95_white"
+            android:textSize="@dimen/sp_14"/>
+
+    </LinearLayout>
+</layout>

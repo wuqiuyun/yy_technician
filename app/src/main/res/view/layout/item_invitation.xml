@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <import type="com.yl.technician.component.databind.ClickHandler" />
+
+        <variable
+            name="click"
+            type="ClickHandler" />
+    </data>
+
+    <LinearLayout
+        android:layout_marginBottom="@dimen/dp_12"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/search_bg"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:id="@+id/iv_photo"
+            android:layout_width="@dimen/dp_100"
+            android:layout_height="@dimen/dp_120"
+            android:scaleType="fitXY"
+            android:src="@drawable/meizi" />
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_margin="@dimen/dp_8"
+            android:paddingLeft="@dimen/dp_5"
+            android:paddingRight="@dimen/dp_5">
+
+            <RelativeLayout
+                android:id="@+id/rl"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentTop="true">
+
+                <TextView
+                    android:id="@+id/tv_name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="艾米"
+                    android:textColor="@color/alpha_95_black"
+                    android:textSize="@dimen/sp_18" />
+
+                <CheckBox
+                    android:id="@+id/cb_checkbox"
+                    android:layout_width="@dimen/dp_20"
+                    android:layout_height="@dimen/dp_20"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:background="@drawable/check_selector"
+                    android:button="@null" />
+
+            </RelativeLayout>
+
+            <TextView
+                android:id="@+id/tv_position"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dp_30"
+                android:text="首脑丝情美发沙龙石岩店总监"
+                android:textColor="@color/text_color"
+                android:textSize="@dimen/sp_14" />
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:layout_centerVertical="true"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal">
+
+                    <me.zhanghai.android.materialratingbar.MaterialRatingBar
+                        android:layout_gravity="center_vertical"
+                        android:id="@+id/material_rating_bar"
+                        android:layout_centerVertical="true"
+                        android:layout_toRightOf="@id/tv_name"
+                        android:layout_width="@dimen/dp_88"
+                        android:layout_height="@dimen/dp_18"
+                        android:isIndicator="true"
+                        app:mrb_secondaryProgressTint="@color/color_FFA200"
+                        app:mrb_progressTint="@color/color_FFA200"
+                        style="@style/Widget.MaterialRatingBar.RatingBar"
+                        android:rating="4.0"
+                        android:layout_marginLeft="@dimen/dp_5"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="4分"
+                        android:textColor="@color/text_color"
+                        android:textSize="@dimen/sp_14"
+                        android:layout_marginLeft="@dimen/dp_5"/>
+
+                </LinearLayout>
+
+                <TextView
+                    android:id="@+id/tv_look_card"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:background="@drawable/shape_text_bg"
+                    android:onClick="@{click.onClick}"
+                    android:paddingBottom="@dimen/dp_3"
+                    android:paddingLeft="@dimen/dp_5"
+                    android:paddingRight="@dimen/dp_5"
+                    android:paddingTop="@dimen/dp_3"
+                    android:text="@string/look_business_card"
+                    android:textColor="@color/text_bg"
+                    android:textSize="@dimen/sp_14" />
+
+            </RelativeLayout>
+
+        </RelativeLayout>
+
+
+    </LinearLayout>
+
+</layout>

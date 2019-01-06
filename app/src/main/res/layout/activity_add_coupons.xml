@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <import type="com.yl.technician.component.databind.ClickHandler" />
+
+        <variable
+            name="click"
+            type="ClickHandler" />
+    </data>
+
+    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/login_bg">
+
+
+        <com.yl.technician.widget.TitleView
+            android:id="@+id/title_view"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:title_text="@string/add_coupons" />
+
+        <!--优惠券类型-->
+        <LinearLayout
+            android:id="@+id/layout_tabs"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/title_view"
+            android:background="@color/white"
+            android:orientation="vertical"
+            android:paddingBottom="@dimen/dp_15"
+            android:paddingLeft="@dimen/dp_10"
+            android:paddingTop="@dimen/dp_10">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/coupons_type"
+                android:textColor="@color/black"
+                android:textSize="@dimen/sp_14" />
+
+            <RadioGroup
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dp_10"
+                android:orientation="horizontal">
+
+                <RadioButton
+                    android:id="@+id/rb_full_reduction"
+                    android:layout_width="@dimen/dp_88"
+                    android:layout_height="@dimen/dp_30"
+                    android:layout_marginLeft="@dimen/dp_60"
+                    android:background="@drawable/text_bg_selector"
+                    android:button="@null"
+                    android:checked="true"
+                    android:gravity="center"
+                    android:onClick="@{click.onClick}"
+                    android:text="@string/full_reduction_coupons"
+                    android:textColor="@drawable/text_selector"
+                    android:textSize="@dimen/sp_14" />
+
+                <RadioButton
+                    android:id="@+id/rb_discount"
+                    android:layout_width="@dimen/dp_88"
+                    android:layout_height="@dimen/dp_30"
+                    android:layout_marginLeft="@dimen/dp_50"
+                    android:background="@drawable/text_bg_selector"
+                    android:button="@null"
+                    android:gravity="center"
+                    android:onClick="@{click.onClick}"
+                    android:text="@string/discount_coupons"
+                    android:textColor="@drawable/text_selector"
+                    android:textSize="@dimen/sp_14" />
+
+            </RadioGroup>
+        </LinearLayout>
+
+        <FrameLayout
+            android:id="@+id/layout_frame"
+            android:layout_below="@+id/layout_tabs"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"></FrameLayout>
+
+    </RelativeLayout>
+</layout>

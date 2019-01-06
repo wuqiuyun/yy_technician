@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <import type="com.yl.technician.component.databind.ClickHandler" />
+
+        <variable
+            name="click"
+            type="ClickHandler" />
+    </data>
+
+    <RelativeLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/login_bg">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <com.yl.technician.widget.TitleView
+                android:id="@+id/title_view"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:title_text="@string/service_setting" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <!--服务类型-->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/dp_40"
+                    android:orientation="horizontal"
+                    android:paddingLeft="@dimen/dp_10"
+                    android:paddingRight="@dimen/dp_10">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/service_type"
+                        android:textSize="@dimen/sp_14"
+                        android:textColor="@color/text_color"
+                        android:layout_gravity="center_vertical"/>
+
+                    <TextView
+                        android:id="@+id/tv_service_type"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/service_facilities1"
+                        android:layout_gravity="center_vertical"
+                        android:textSize="@dimen/sp_14"
+                        android:textColor="@color/text_color"
+                        android:layout_marginLeft="@dimen/dp_5"/>
+
+                </LinearLayout>
+
+                <!--服务时间-->
+                <RelativeLayout
+                    android:id="@+id/rl_service_time"
+                    android:onClick="@{click.onClick}"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/dp_40"
+                    android:background="@color/white"
+                    android:paddingLeft="@dimen/dp_10"
+                    android:paddingRight="@dimen/dp_10">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/service_time"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/sp_14"
+                        android:layout_centerVertical="true"/>
+
+                    <TextView
+                        android:id="@+id/tv_service_time"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/service_time_hint"
+                        android:textSize="@dimen/sp_14"
+                        android:textColor="@color/hint_color"
+                        android:layout_marginLeft="@dimen/dp_20"
+                        android:layout_centerInParent="true"/>
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/right"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"/>
+
+                </RelativeLayout>
+                <include layout="@layout/layout_line"/>
+
+                <!--服务价格-->
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/dp_40"
+                    android:background="@color/white"
+                    android:paddingRight="@dimen/dp_10"
+                    android:paddingLeft="@dimen/dp_10"
+                    android:focusable="true"
+                    android:focusableInTouchMode="true">
+
+                    <TextView
+                        android:id="@+id/tv_price"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/service_price"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/sp_14"
+                        android:layout_centerVertical="true"/>
+
+                    <EditText
+                        android:id="@+id/et_pric"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="@string/service_price_hint"
+                        android:layout_toRightOf="@id/tv_price"
+                        style="@style/EditTextDefultStyle"
+                        android:layout_centerVertical="true"
+                        android:textSize="@dimen/sp_14"
+                        android:textColor="@color/black"
+                        android:textColorHint="@color/hint_color"
+                        android:paddingLeft="@dimen/dp_35"
+                        android:maxLines="1"
+                        android:inputType="numberDecimal"
+                        android:maxLength="10"/>
+
+                </RelativeLayout>
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/btn_save"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentStart="true"
+            android:background="@color/login_text_bg"
+            android:onClick="@{click.onClick}"
+            android:text="@string/save"
+            android:textColor="@color/alpha_75_white"
+            android:textSize="@dimen/sp_14" />
+    </RelativeLayout>
+</layout>

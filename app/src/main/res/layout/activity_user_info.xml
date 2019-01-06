@@ -1,0 +1,374 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <import type="com.yl.technician.component.databind.ClickHandler" />
+
+        <variable
+            name="click"
+            type="ClickHandler" />
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/login_bg"
+        android:orientation="vertical">
+
+        <com.yl.technician.widget.TitleView
+            android:id="@+id/title_view"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:title_text="@string/person_data_edit" />
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:scrollbars="none">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <!--头像-->
+                <RelativeLayout
+                    android:id="@+id/rl_head_photo"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/dp_60"
+                    android:background="@color/alpha_95_white"
+                    android:descendantFocusability="blocksDescendants"
+                    android:onClick="@{click.onClick}"
+                    android:paddingBottom="@dimen/dp_5"
+                    android:paddingLeft="@dimen/dp_20"
+                    android:paddingRight="@dimen/dp_10"
+                    android:paddingTop="@dimen/dp_5">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentLeft="true"
+                        android:layout_centerVertical="true"
+                        android:text="@string/head_photo"
+                        android:textColor="@color/alpha_95_black"
+                        android:textSize="@dimen/sp_16" />
+
+                    <com.yl.core.widget.CircleImageView
+                        android:id="@+id/civ_head_photo"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_alignParentRight="true"
+                        android:src="@drawable/meizi" />
+
+                </RelativeLayout>
+
+                <!--昵称-->
+                <RelativeLayout
+                    android:id="@+id/rl_nickname"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/dp_50"
+                    android:layout_marginBottom="@dimen/dp_1"
+                    android:layout_marginTop="@dimen/dp_10"
+                    android:background="@color/alpha_95_white"
+                    android:onClick="@{click.onClick}"
+                    android:paddingLeft="@dimen/dp_20"
+                    android:paddingRight="@dimen/dp_20">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentLeft="true"
+                        android:layout_centerVertical="true"
+                        android:text="@string/nickname"
+                        android:textColor="@color/alpha_95_black"
+                        android:textSize="@dimen/sp_16" />
+
+                    <TextView
+                        android:id="@+id/tv_nickname"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:drawablePadding="@dimen/dp_5"
+                        android:textSize="@dimen/sp_16" />
+
+                </RelativeLayout>
+
+                <!--性别-->
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/dp_50"
+                    android:layout_marginBottom="@dimen/dp_1"
+                    android:background="@color/white"
+                    android:paddingLeft="@dimen/dp_20"
+                    android:paddingRight="@dimen/dp_20">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentLeft="true"
+                        android:layout_centerInParent="true"
+                        android:text="@string/gender"
+                        android:textColor="@color/alpha_95_black"
+                        android:textSize="@dimen/sp_16" />
+
+                    <RadioGroup
+                        android:id="@+id/rg_gender"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:orientation="horizontal">
+
+                        <RadioButton
+                            android:id="@+id/rb_man"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginRight="@dimen/dp_10"
+                            android:background="@null"
+                            android:button="@null"
+                            android:checked="true"
+                            android:drawableLeft="@drawable/gender_man_selector"
+                            android:drawablePadding="@dimen/dp_5"
+                            android:text="@string/man"
+                            android:textColor="@color/text_color"
+                            android:textSize="@dimen/sp_14"
+                            android:visibility="gone" />
+
+                        <RadioButton
+                            android:id="@+id/rb_woman"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:background="@null"
+                            android:button="@null"
+                            android:drawableLeft="@drawable/gender_woman_selector"
+                            android:drawablePadding="@dimen/dp_5"
+                            android:text="@string/woman"
+                            android:textColor="@color/text_color"
+                            android:textSize="@dimen/sp_14"
+                            android:visibility="gone" />
+
+                    </RadioGroup>
+
+                </RelativeLayout>
+
+                <!--个人头衔-->
+                <RelativeLayout
+                    android:id="@+id/rl_personal_title"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/dp_50"
+                    android:layout_marginBottom="@dimen/dp_1"
+                    android:layout_marginTop="@dimen/dp_10"
+                    android:background="@color/white"
+                    android:descendantFocusability="blocksDescendants"
+                    android:onClick="@{click.onClick}"
+                    android:paddingLeft="@dimen/dp_20"
+                    android:paddingRight="@dimen/dp_20">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:text="@string/personal_title"
+                        android:textColor="@color/alpha_95_black"
+                        android:textSize="@dimen/sp_16" />
+
+                    <TextView
+                        android:id="@+id/tv_professor"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:layout_gravity="right"
+                        android:drawablePadding="@dimen/dp_5"
+                        android:drawableRight="@drawable/right"
+                        android:textSize="@dimen/sp_14" />
+
+                </RelativeLayout>
+
+                <!--形象照-->
+                <RelativeLayout
+                    android:id="@+id/rl_personal_image"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="@dimen/dp_1"
+                    android:background="@color/alpha_95_white"
+                    android:descendantFocusability="blocksDescendants"
+                    android:minHeight="@dimen/dp_50"
+                    android:onClick="@{click.onClick}"
+                    android:paddingLeft="@dimen/dp_20"
+                    android:paddingRight="@dimen/dp_20">
+
+                    <TextView
+                        android:id="@+id/tv_2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentLeft="true"
+                        android:layout_marginTop="@dimen/dp_16"
+                        android:text="个人形象"
+                        android:textColor="@color/alpha_95_black"
+                        android:textSize="@dimen/sp_16" />
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_marginTop="@dimen/dp_18"
+                        android:src="@drawable/right" />
+
+                </RelativeLayout>
+
+                <!--生日-->
+                <RelativeLayout
+                    android:id="@+id/rl_birthday"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/dp_50"
+                    android:layout_marginBottom="@dimen/dp_1"
+                    android:background="@color/white"
+                    android:descendantFocusability="blocksDescendants"
+                    android:onClick="@{click.onClick}"
+                    android:paddingLeft="@dimen/dp_20"
+                    android:paddingRight="@dimen/dp_20">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:text="@string/birthday"
+                        android:textColor="@color/alpha_95_black"
+                        android:textSize="@dimen/sp_16" />
+
+                    <TextView
+                        android:id="@+id/tv_birthday"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:layout_gravity="right"
+                        android:drawablePadding="@dimen/dp_5"
+                        android:drawableRight="@drawable/right"
+                        android:textSize="@dimen/sp_14" />
+
+                </RelativeLayout>
+
+                <!--爱好-->
+                <RelativeLayout
+                    android:id="@+id/rl_hobby"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/dp_50"
+                    android:layout_marginBottom="@dimen/dp_1"
+                    android:background="@color/white"
+                    android:descendantFocusability="blocksDescendants"
+                    android:onClick="@{click.onClick}"
+                    android:paddingLeft="@dimen/dp_20"
+                    android:paddingRight="@dimen/dp_20">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:text="@string/hobby"
+                        android:textColor="@color/alpha_95_black"
+                        android:textSize="@dimen/sp_16" />
+
+                    <TextView
+                        android:id="@+id/tv_hobby"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:layout_gravity="right"
+                        android:drawablePadding="@dimen/dp_5"
+                        android:drawableRight="@drawable/right"
+                        android:ellipsize="end"
+                        android:maxEms="15"
+                        android:maxLines="1"
+                        android:textSize="@dimen/sp_14" />
+
+                </RelativeLayout>
+
+                <!--地址-->
+                <RelativeLayout
+                    android:id="@+id/rl_location"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/dp_50"
+                    android:layout_marginBottom="@dimen/dp_1"
+                    android:background="@color/alpha_95_white"
+                    android:descendantFocusability="blocksDescendants"
+                    android:onClick="@{click.onClick}"
+                    android:paddingLeft="@dimen/dp_20"
+                    android:paddingRight="@dimen/dp_20">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentLeft="true"
+                        android:layout_centerVertical="true"
+                        android:text="@string/location"
+                        android:textColor="@color/alpha_95_black"
+                        android:textSize="@dimen/sp_16" />
+
+                    <TextView
+                        android:id="@+id/tv_location"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:drawablePadding="@dimen/dp_5"
+                        android:drawableRight="@drawable/right"
+                        android:textSize="@dimen/sp_16" />
+
+                </RelativeLayout>
+
+                <!--个人介绍-->
+                <RelativeLayout
+                    android:id="@+id/rl_personal_introduction"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="@dimen/dp_1"
+                    android:background="@color/alpha_95_white"
+                    android:descendantFocusability="blocksDescendants"
+                    android:minHeight="@dimen/dp_50"
+                    android:onClick="@{click.onClick}"
+                    android:paddingLeft="@dimen/dp_20"
+                    android:paddingRight="@dimen/dp_20">
+
+                    <TextView
+                        android:id="@+id/tv_1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentLeft="true"
+                        android:layout_marginTop="@dimen/dp_16"
+                        android:text="@string/personal_introduction"
+                        android:textColor="@color/alpha_95_black"
+                        android:textSize="@dimen/sp_16" />
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_marginTop="@dimen/dp_18"
+                        android:src="@drawable/right" />
+
+                    <TextView
+                        android:id="@+id/tv_intro"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/tv_1"
+                        android:layout_marginBottom="@dimen/dp_3"
+                        android:layout_marginTop="@dimen/dp_3"
+                        android:textColor="@color/text_color"
+                        android:textSize="@dimen/sp_14" />
+
+                </RelativeLayout>
+
+
+            </LinearLayout>
+
+
+        </ScrollView>
+
+    </LinearLayout>
+</layout>

@@ -1,0 +1,186 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <import type="com.yl.technician.component.databind.ClickHandler" />
+
+        <variable
+            name="click"
+            type="ClickHandler" />
+    </data>
+
+    <RelativeLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/login_bg">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <com.yl.technician.widget.TitleView
+                android:id="@+id/title_view"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:title_text="@string/single_combo" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <!--套餐名称-->
+                <RelativeLayout
+                    android:id="@+id/rl_service_time"
+                    android:onClick="@{click.onClick}"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/dp_40"
+                    android:background="@color/white"
+                    android:paddingLeft="@dimen/dp_10"
+                    android:paddingRight="@dimen/dp_10"
+                    android:focusable="true"
+                    android:focusableInTouchMode="true">
+
+                    <TextView
+                        android:id="@+id/tv_combo_name"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/combo_name"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/sp_14"
+                        android:layout_centerVertical="true"/>
+
+                    <EditText
+                        android:id="@+id/et_combo_name"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="@string/combo_name_hint"
+                        android:layout_toRightOf="@id/tv_combo_name"
+                        style="@style/EditTextDefultStyle"
+                        android:layout_centerVertical="true"
+                        android:textSize="@dimen/sp_14"
+                        android:textColor="@color/black"
+                        android:textColorHint="@color/hint_color"
+                        android:paddingLeft="@dimen/dp_35"
+                        android:maxLength="15"
+                        android:maxLines="1"/>
+
+                </RelativeLayout>
+                <include layout="@layout/layout_line"/>
+
+                <!--服使用次数-->
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/dp_40"
+                    android:background="@color/white"
+                    android:paddingRight="@dimen/dp_10"
+                    android:paddingLeft="@dimen/dp_10"
+                    android:focusable="true"
+                    android:focusableInTouchMode="true">
+
+                    <TextView
+                        android:id="@+id/tv_use_num"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/use_num"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/sp_14"
+                        android:layout_centerVertical="true"/>
+
+                    <EditText
+                        android:digits="0123456789"
+                        android:id="@+id/et_use_num"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="@string/use_num_hint"
+                        android:layout_toRightOf="@id/tv_use_num"
+                        style="@style/EditTextDefultStyle"
+                        android:layout_centerVertical="true"
+                        android:textSize="@dimen/sp_14"
+                        android:textColor="@color/black"
+                        android:textColorHint="@color/hint_color"
+                        android:paddingLeft="@dimen/dp_35"
+                        android:maxLines="1"
+                        android:maxLength="4"
+                        android:inputType="numberDecimal"/>
+
+                </RelativeLayout>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/dp_40"
+                    android:text="@string/associated_services"
+                    android:textColor="@color/text_color"
+                    android:textSize="@dimen/sp_14"
+                    android:gravity="center_vertical"
+                    android:paddingLeft="@dimen/dp_10"/>
+
+                <android.support.v7.widget.RecyclerView
+                    android:id="@+id/rcv_service"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/white"
+                    android:padding="@dimen/dp_10">
+
+                </android.support.v7.widget.RecyclerView>
+
+                <!--套餐价格-->
+                <RelativeLayout
+                    android:layout_marginTop="@dimen/dp_10"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/dp_40"
+                    android:background="@color/white"
+                    android:paddingRight="@dimen/dp_10"
+                    android:paddingLeft="@dimen/dp_10"
+                    android:focusable="true"
+                    android:focusableInTouchMode="true">
+
+                    <TextView
+                        android:id="@+id/tv_combo_price"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/combo_price"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/sp_14"
+                        android:layout_centerVertical="true"/>
+                    <TextView
+                        android:layout_marginLeft="@dimen/dp_5"
+                        android:layout_toRightOf="@+id/tv_combo_price"
+                        android:id="@+id/tv_price"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="0.0"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/sp_14"
+                        android:layout_centerVertical="true"/>
+                </RelativeLayout>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/dp_40"
+                    android:text="@string/combo_hint"
+                    android:textColor="@color/text_color"
+                    android:textSize="@dimen/sp_14"
+                    android:gravity="center_vertical"
+                    android:paddingLeft="@dimen/dp_10"/>
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/btn_save"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentStart="true"
+            android:background="@color/login_text_bg"
+            android:onClick="@{click.onClick}"
+            android:text="@string/save"
+            android:textColor="@color/alpha_75_white"
+            android:textSize="@dimen/sp_14" />
+    </RelativeLayout>
+</layout>

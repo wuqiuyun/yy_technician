@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+    <data>
+        <import type="com.yl.technician.component.databind.ClickHandler"/>
+        <variable
+            name="click"
+            type="ClickHandler"/>
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/login_bg"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/tv_type"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp_40"
+            android:layout_marginLeft="@dimen/dp_10"
+            android:gravity="center_vertical"
+            android:text="短发"
+            android:textColor="@color/text_color"
+            android:textSize="@dimen/sp_14" />
+
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/rv_add_medicine"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+        </android.support.v7.widget.RecyclerView>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp_40"
+            android:background="@color/white"
+            android:orientation="horizontal"
+            android:paddingLeft="@dimen/dp_10">
+
+            <TextView
+                android:id="@+id/tv_add_medicine"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:background="@drawable/shape_text_bg3"
+                android:drawableLeft="@drawable/icon_add"
+                android:drawablePadding="@dimen/dp_3"
+                android:padding="@dimen/dp_3"
+                android:text="@string/add_medicine"
+                android:textColor="@color/text_color4"
+                android:textSize="@dimen/sp_14" />
+
+
+        </LinearLayout>
+
+    </LinearLayout>
+</layout>

@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:background="@color/white"
+              android:orientation="vertical">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_30"
+        android:gravity="center"
+        android:text="@string/custom_time"
+        android:textColor="@color/alpha_80_black"
+        android:textSize="@dimen/sp_16"/>
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/rv_dialog_time"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:scrollbars="none"
+        android:overScrollMode="never"
+        />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_0_5"
+        android:background="@color/color_B0B0B0"
+        />
+
+    <TextView
+        android:id="@+id/tv_time_dialog_ok"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_40"
+        android:gravity="center"
+        android:text="@string/time_dialog_ok"
+        android:textColor="@color/alpha_80_black"
+        android:textSize="@dimen/sp_15"/>
+
+</LinearLayout>

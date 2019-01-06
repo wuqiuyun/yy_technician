@@ -1,0 +1,319 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <data>
+
+        <import type="com.yl.technician.component.databind.ClickHandler" />
+
+        <variable
+            name="click"
+            type="ClickHandler" />
+    </data>
+
+    <LinearLayout xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        tools:context=".module.home.order.details.OrderDetailsActivity">
+
+        <com.yl.technician.widget.TitleView
+            android:id="@+id/title_view"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:title_text="@string/label_title_order_details" />
+        <RelativeLayout
+            android:layout_weight="1"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+        <TextView
+            android:visibility="gone"
+            android:id="@+id/tv_order_hint"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/color_FFB848"
+            android:gravity="center"
+            android:padding="@dimen/dp_5"
+            android:textColor="@color/white"
+            android:textSize="@dimen/sp_12"/>
+    <LinearLayout
+        android:id="@+id/ll_user_data"
+        android:layout_weight="1"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+
+        <LinearLayout
+            android:id="@+id/ll_user_info"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/title_view"
+            android:layout_marginLeft="@dimen/dp_10"
+            android:layout_marginRight="@dimen/dp_10"
+            android:background="@drawable/shape_bg_white"
+            android:orientation="vertical"
+            android:paddingBottom="@dimen/dp_10">
+
+            <com.yl.core.widget.CircleImageView
+                android:id="@+id/iv_photo"
+                android:layout_width="@dimen/dp_60"
+                android:layout_height="@dimen/dp_60"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="@dimen/dp_10"
+                android:src="@drawable/ic_launcher_background" />
+
+            <TextView
+                android:id="@+id/tv_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="@dimen/dp_5"
+                android:drawablePadding="@dimen/dp_6"
+                android:gravity="center"
+                android:textColor="@color/color_343434"
+                android:textSize="@dimen/sp_18" />
+
+            <TextView
+                android:id="@+id/tv_label"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="@dimen/dp_5"
+                android:textColor="@color/dark_gray"
+                android:textSize="@dimen/sp_16" />
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_above="@id/ll_bottom"
+            android:layout_below="@id/ll_user_info"
+            android:layout_marginTop="@dimen/dp_10"
+            android:background="@color/white"
+            android:orientation="vertical">
+
+            <!-- 服务项目 -->
+            <com.yl.technician.widget.UserMenuView
+                android:id="@+id/order_project"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dp_10"
+                app:title_text="@string/order_project" />
+
+            <!-- 服务门店 -->
+            <com.yl.technician.widget.UserMenuView
+                android:id="@+id/order_store"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dp_10"
+                app:title_text="@string/order_store" />
+
+            <!-- 预约时间 -->
+            <com.yl.technician.widget.UserMenuView
+                android:id="@+id/order_date_promise"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dp_10"
+                android:visibility="gone"
+                app:title_text="原预约时间：" />
+
+            <!-- 预约时间 -->
+            <com.yl.technician.widget.UserMenuView
+                android:id="@+id/order_date_rese"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dp_10"
+                app:title_text="@string/order_date_reservation" />
+
+            <!-- 开始时间 -->
+            <com.yl.technician.widget.UserMenuView
+                android:id="@+id/order_date_start"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dp_10"
+                android:visibility="gone"
+                app:title_text="@string/order_date_start" />
+
+            <com.yl.technician.widget.UserMenuView
+                android:id="@+id/order_date_stop"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dp_10"
+                android:visibility="gone"
+                app:title_text="@string/order_date_stop" />
+
+            <com.yl.technician.widget.UserMenuView
+                android:id="@+id/order_id"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/dp_10"
+                android:layout_marginTop="@dimen/dp_10"
+                app:title_text="@string/order_id" />
+
+            <include layout="@layout/layout_line" />
+
+            <LinearLayout
+                android:paddingBottom="@dimen/dp_5"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <com.yl.technician.widget.UserMenuView
+                    android:id="@+id/order_amount"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/dp_10"
+                    app:content_text_color="@color/color_red"
+                    app:title_text="订单金额：" />
+
+                <com.yl.technician.widget.UserMenuView
+                    android:id="@+id/coupon_amount"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/dp_10"
+                    app:content_text_color="@color/color_red"
+                    app:title_text="优惠金额：" />
+
+                <com.yl.technician.widget.UserMenuView
+                    android:id="@+id/pay_amount"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/dp_10"
+                    app:content_text_color="@color/color_red"
+                    app:title_text="支付金额：" />
+
+                <com.yl.technician.widget.UserMenuView
+                    android:id="@+id/refund_amount"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/dp_10"
+                    android:visibility="gone"
+                    app:content_text_color="@color/color_red"
+                    app:title_text="退回金额：" />
+
+                <!-- 手续费 -->
+                <com.yl.technician.widget.UserMenuView
+                    android:id="@+id/order_handling_fee"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/dp_10"
+                    android:visibility="gone"
+                    app:content_text_color="@color/text_color6"
+                    app:content_text_sub_color="@color/text_color"
+                    app:title_text="@string/order_handling_fee" />
+
+                <com.yl.technician.widget.UserMenuView
+                    android:id="@+id/clear_amount"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/dp_10"
+                    app:content_text_color="@color/color_red"
+                    app:title_text="预计收入：" />
+
+                <com.yl.technician.widget.UserMenuView
+                    android:id="@+id/order_remarks"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="@dimen/dp_10"
+                    android:layout_marginTop="@dimen/dp_10"
+                    app:content_text_color="@color/color_343434"
+                    app:title_text="订单备注：" />
+
+            </LinearLayout>
+        </LinearLayout>
+    </LinearLayout>
+
+</ScrollView>
+
+    </LinearLayout>
+        </RelativeLayout>
+    <LinearLayout
+        android:id="@+id/ll_bottom"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_50"
+        android:layout_alignParentBottom="true"
+        android:background="@color/color_F7F7F7"
+        android:orientation="horizontal">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:visibility="visible">
+
+            <TextView
+                android:id="@+id/btn_tell_phone"
+                style="@style/RippleBtnTheme"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_marginLeft="@dimen/dp_10"
+                android:drawablePadding="@dimen/dp_3"
+                android:drawableTop="@drawable/icon_phone"
+                android:onClick="@{click.onClick}"
+                android:padding="@dimen/dp_5"
+                android:text="@string/phone"
+                android:textColor="@color/color_343434"
+                android:textSize="@dimen/sp_10" />
+
+            <TextView
+                android:id="@+id/btn_send_msg"
+                style="@style/RippleBtnTheme"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_marginLeft="@dimen/dp_10"
+                android:drawablePadding="@dimen/dp_3"
+                android:drawableTop="@drawable/icon_message"
+                android:onClick="@{click.onClick}"
+                android:padding="@dimen/dp_5"
+                android:text="@string/advisory"
+                android:textColor="@color/color_343434"
+                android:textSize="@dimen/sp_10" />
+        </LinearLayout>
+
+        <View
+            android:layout_width="@dimen/dp_0"
+            android:layout_height="@dimen/dp_0"
+            android:layout_weight="1" />
+
+        <TextView
+            android:id="@+id/btn_0"
+            android:layout_width="@dimen/dp_100"
+            android:layout_height="match_parent"
+            android:background="@color/color_FFB848"
+            android:gravity="center"
+            android:onClick="@{click.onClick}"
+            android:paddingLeft="@dimen/dp_10"
+            android:paddingRight="@dimen/dp_10"
+            android:text="@string/comment_invite"
+            android:textColor="@color/white"
+            android:textSize="@dimen/sp_14"
+            android:visibility="gone" />
+
+        <TextView
+            android:id="@+id/btn_1"
+            android:layout_width="@dimen/dp_100"
+            android:layout_height="match_parent"
+            android:background="@color/color_FF6600"
+            android:gravity="center"
+            android:onClick="@{click.onClick}"
+            android:paddingLeft="@dimen/dp_10"
+            android:paddingRight="@dimen/dp_10"
+            android:text="@string/comment_invite"
+            android:textColor="@color/white"
+            android:textSize="@dimen/sp_14" />
+    </LinearLayout>
+    </LinearLayout>
+</layout>

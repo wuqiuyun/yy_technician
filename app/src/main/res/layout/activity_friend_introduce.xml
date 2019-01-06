@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/login_bg">
+
+
+        <com.yl.technician.widget.TitleView
+            android:id="@+id/title_view"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:title_text="查看简介" />
+
+        <TextView
+            android:id="@+id/fi_introduce_tv"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@+id/title_view"
+            android:padding="@dimen/dp_10"
+            android:textColor="@color/color_666666"
+            android:textSize="@dimen/sp_13"
+            tools:text="年会上大肆大叔大婶" />
+    </RelativeLayout>
+</layout>

@@ -1,0 +1,4 @@
+include ':app',
+        ':librarys:YLCore',
+        ':librarys:citypicker',
+        ':librarys:calendarview'

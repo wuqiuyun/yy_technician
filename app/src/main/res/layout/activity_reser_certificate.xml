@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <import type="com.yl.technician.component.databind.ClickHandler" />
+
+        <variable
+            name="click"
+            type="ClickHandler" />
+    </data>
+
+    <LinearLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:background="@color/color_FFA200"
+        tools:context=".module.mine.order.certificate.OrderCertificateActivity">
+
+        <View
+            android:id="@+id/status_bar"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/statusbar_view_height"
+            android:background="@color/color_FFA200" />
+
+        <com.yl.technician.widget.TitleView
+            android:id="@+id/title_view"
+            app:title_text="当面付"
+            app:bg_color="@color/color_FFA200"
+            app:title_text_color="@color/white"
+            app:left_text_color="@color/white"
+            app:left_icon="@drawable/icon_arrow_back_white"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+
+
+        <LinearLayout
+            android:layout_gravity="center"
+            android:background="@drawable/shape_qrcode"
+            android:layout_marginTop="@dimen/dp_60"
+            android:layout_marginLeft="@dimen/dp_15"
+            android:layout_marginRight="@dimen/dp_15"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:gravity="center">
+            <LinearLayout
+                android:background="@drawable/shape_qrcode_top"
+                android:layout_width="match_parent"
+                android:layout_height="40dp">
+                <ImageView
+                    android:layout_marginLeft="@dimen/dp_10"
+                    android:layout_gravity="center"
+                    android:src="@drawable/logo_02"
+                    android:layout_width="20dp"
+                    android:layout_height="20dp" />
+
+                <TextView
+                    android:layout_weight="1"
+                    android:layout_marginLeft="@dimen/dp_10"
+                    android:layout_gravity="center"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="@dimen/sp_12"
+                    android:textColor="@color/dark_gray"
+                    android:text="意约"/>
+
+                <TextView
+                    android:onClick="@{click.onClick}"
+                    android:id="@+id/tv_select_paytype"
+                    android:paddingRight="@dimen/dp_10"
+                    android:gravity="center"
+                    android:layout_marginLeft="@dimen/dp_10"
+                    android:layout_gravity="center"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:textSize="@dimen/sp_12"
+                    android:textColor="@color/color_FFA200"
+                    android:text="微信支付>"/>
+
+            </LinearLayout>
+            <TextView
+                android:id="@+id/tv_qrcode_money"
+                android:layout_marginTop="@dimen/dp_30"
+                android:layout_marginBottom="@dimen/dp_15"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="@dimen/sp_22"
+                android:textColor="@color/text_color8"
+                android:text="￥0.0"/>
+
+            <ImageView
+                android:id="@+id/iv_qr_code"
+                android:layout_width="@dimen/dp_200"
+                android:layout_height="@dimen/dp_200"
+                android:background="@color/white"/>
+            <TextView
+                android:id="@+id/tv_qr_code"
+                android:layout_marginBottom="@dimen/dp_30"
+                android:layout_marginTop="@dimen/dp_10"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="@dimen/sp_12"
+                android:textColor="@color/black"
+                android:text="微信扫描二维码向我付款"/>
+        </LinearLayout>
+    </LinearLayout>
+</layout>

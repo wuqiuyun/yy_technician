@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <import type="com.yl.technician.component.databind.ClickHandler" />
+
+        <variable
+            name="click"
+            type="ClickHandler" />
+    </data>
+    <LinearLayout
+        android:id="@+id/ll_list"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_40"
+        android:layout_marginBottom="@dimen/dp_1"
+        android:background="@color/white"
+        android:orientation="horizontal"
+        android:paddingLeft="@dimen/dp_10"
+        android:paddingRight="@dimen/dp_10">
+
+        <!--药水名称-->
+        <RelativeLayout
+            android:layout_width="@dimen/dp_160"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:background="@drawable/edittext_bg_grey"
+            android:focusable="true"
+            android:focusableInTouchMode="true"
+            android:paddingBottom="@dimen/dp_2"
+            android:paddingLeft="@dimen/dp_5"
+            android:paddingRight="@dimen/dp_5"
+            android:paddingTop="@dimen/dp_2">
+
+            <TextView
+                android:id="@+id/tv_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/medicine_name"
+                android:textColor="@color/text_color4"
+                android:textSize="@dimen/sp_14" />
+
+            <EditText
+                android:id="@+id/et_medicine_name"
+                style="@style/EditTextDefultStyle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_toRightOf="@id/tv_name"
+                android:maxLines="1"
+                android:maxLength="10"
+                android:textColor="@color/text_color4"
+                android:textSize="@dimen/sp_14" />
+
+        </RelativeLayout>
+
+        <!--药水价格-->
+        <RelativeLayout
+            android:layout_width="@dimen/dp_120"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="@dimen/dp_8"
+            android:background="@drawable/edittext_bg_grey"
+            android:focusable="true"
+            android:focusableInTouchMode="true"
+            android:paddingBottom="@dimen/dp_2"
+            android:paddingLeft="@dimen/dp_5"
+            android:paddingRight="@dimen/dp_5"
+            android:paddingTop="@dimen/dp_2">
+
+            <TextView
+                android:id="@+id/tv_price"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/price"
+                android:textColor="@color/text_color4"
+                android:textSize="@dimen/sp_14" />
+
+            <EditText
+                android:id="@+id/et_price"
+                style="@style/EditTextDefultStyle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_toRightOf="@id/tv_price"
+                android:maxLines="1"
+                android:maxLength="6"
+                android:textColor="@color/text_color4"
+                android:textSize="@dimen/sp_14"
+                android:inputType="numberDecimal"/>
+
+        </RelativeLayout>
+
+        <TextView
+            android:id="@+id/tv_delete"
+            android:layout_width="@dimen/dp_40"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="@dimen/dp_8"
+            android:gravity="center"
+            android:text="@string/delete"
+            android:textColor="@color/text_color4"
+            android:textSize="@dimen/sp_14" />
+
+    </LinearLayout>
+
+</layout>

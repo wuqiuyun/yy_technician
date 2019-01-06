@@ -1,0 +1,239 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <import type="com.yl.technician.component.databind.ClickHandler" />
+
+        <variable
+            name="click"
+            type="ClickHandler" />
+    </data>
+
+    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/login_bg">
+
+        <Button
+            android:id="@+id/btn_save"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentStart="true"
+            android:background="@color/login_text_bg"
+            android:onClick="@{click.onClick}"
+            android:text="@string/save"
+            android:textColor="@color/alpha_75_white"
+            android:textSize="@dimen/sp_14" />
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_above="@id/btn_save">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <com.yl.technician.widget.TitleView
+                    android:id="@+id/title_view"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:title_text="@string/multiterm_combo" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <!--套餐名称-->
+                    <RelativeLayout
+                        android:id="@+id/rl_service_time"
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/dp_40"
+                        android:background="@color/white"
+                        android:focusable="true"
+                        android:focusableInTouchMode="true"
+                        android:onClick="@{click.onClick}"
+                        android:paddingLeft="@dimen/dp_10"
+                        android:paddingRight="@dimen/dp_10">
+
+                        <TextView
+                            android:id="@+id/tv_combo_name"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerVertical="true"
+                            android:text="@string/combo_name"
+                            android:textColor="@color/black"
+                            android:textSize="@dimen/sp_14" />
+
+                        <EditText
+                            android:id="@+id/et_combo_name"
+                            style="@style/EditTextDefultStyle"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_centerVertical="true"
+                            android:layout_toRightOf="@id/tv_combo_name"
+                            android:hint="@string/combo_name_hint"
+                            android:maxLines="1"
+                            android:maxLength="15"
+                            android:paddingLeft="@dimen/dp_35"
+                            android:textColor="@color/black"
+                            android:textColorHint="@color/hint_color"
+                            android:textSize="@dimen/sp_14" />
+
+                    </RelativeLayout>
+
+                    <include layout="@layout/layout_line" />
+
+                    <!--套餐原价-->
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/dp_40"
+                        android:background="@color/white"
+                        android:focusable="true"
+                        android:focusableInTouchMode="true"
+                        android:paddingLeft="@dimen/dp_10"
+                        android:paddingRight="@dimen/dp_10">
+
+                        <TextView
+                            android:id="@+id/tv_original_price"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerVertical="true"
+                            android:text="@string/original_price"
+                            android:textColor="@color/black"
+                            android:textSize="@dimen/sp_14" />
+
+                        <EditText
+                            android:id="@+id/et_original_price"
+                            style="@style/EditTextDefultStyle"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_centerVertical="true"
+                            android:layout_toRightOf="@id/tv_original_price"
+                            android:hint="@string/original_price_hint"
+                            android:inputType="numberDecimal"
+                            android:maxLines="1"
+                            android:maxLength="6"
+                            android:paddingLeft="@dimen/dp_35"
+                            android:textColor="@color/black"
+                            android:textColorHint="@color/hint_color"
+                            android:textSize="@dimen/sp_14" />
+
+                    </RelativeLayout>
+
+                    <!--套餐价格-->
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/dp_40"
+                        android:layout_marginTop="@dimen/dp_1"
+                        android:background="@color/white"
+                        android:focusable="true"
+                        android:focusableInTouchMode="true"
+                        android:paddingLeft="@dimen/dp_10"
+                        android:paddingRight="@dimen/dp_10">
+
+                        <TextView
+                            android:id="@+id/tv_combo_price"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerVertical="true"
+                            android:text="@string/combo_price"
+                            android:textColor="@color/black"
+                            android:textSize="@dimen/sp_14" />
+
+                        <EditText
+                            android:id="@+id/et_combo_price"
+                            style="@style/EditTextDefultStyle"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_centerVertical="true"
+                            android:layout_toRightOf="@id/tv_combo_price"
+                            android:hint="@string/combo_price_hint"
+                            android:inputType="numberDecimal"
+                            android:maxLines="1"
+                            android:maxLength="6"
+                            android:paddingLeft="@dimen/dp_35"
+                            android:textColor="@color/black"
+                            android:textColorHint="@color/hint_color"
+                            android:textSize="@dimen/sp_14" />
+
+                    </RelativeLayout>
+
+                    <!--服务时间-->
+                    <RelativeLayout
+                        android:id="@+id/rl__time"
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/dp_40"
+                        android:background="@color/white"
+                        android:onClick="@{click.onClick}"
+                        android:paddingLeft="@dimen/dp_10"
+                        android:paddingRight="@dimen/dp_10">
+
+                        <TextView
+                            android:id="@+id/tv_time"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerVertical="true"
+                            android:text="@string/service_time"
+                            android:textColor="@color/black"
+                            android:textSize="@dimen/sp_14" />
+
+                        <TextView
+                            android:id="@+id/tv_service_time"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerVertical="true"
+                            android:layout_marginLeft="@dimen/dp_35"
+                            android:layout_toRightOf="@id/tv_time"
+                            android:text="@string/service_time_hint"
+                            android:textColor="@color/hint_color"
+                            android:textSize="@dimen/sp_14" />
+
+                        <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentRight="true"
+                            android:layout_centerVertical="true"
+                            android:src="@drawable/right" />
+
+                    </RelativeLayout>
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/dp_40"
+                        android:gravity="center_vertical"
+                        android:paddingLeft="@dimen/dp_10"
+                        android:text="@string/multiterm_combo_hint"
+                        android:textColor="@color/text_color"
+                        android:textSize="@dimen/sp_14" />
+                    <com.yl.technician.widget.SwipeRecyclerView
+                        android:id="@+id/rv_server_type"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                    </com.yl.technician.widget.SwipeRecyclerView>
+                    <TextView
+                        android:id="@+id/tv_add_service"
+                        android:onClick="@{click.onClick}"
+                        android:layout_marginLeft="@dimen/dp_10"
+                        android:layout_marginBottom="@dimen/dp_10"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/add_services"
+                        android:textSize="@dimen/sp_14"
+                        android:textColor="@color/text_color"
+                        android:layout_marginTop="@dimen/dp_10"
+                        android:drawableLeft="@drawable/icon_add"
+                        android:drawablePadding="@dimen/dp_3"
+                        android:background="@drawable/shape_btn_white_cancel"
+                        android:padding="@dimen/dp_5"
+                        android:maxLines="1"/>
+                </LinearLayout>
+            </LinearLayout>
+        </ScrollView>
+    </RelativeLayout>
+</layout>
